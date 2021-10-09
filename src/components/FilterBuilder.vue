@@ -60,10 +60,10 @@
                         @change="filterChange"
                     >
                         <template slot="item" slot-scope="data">
-                            {{ dropDownItemTextCreator(data.item, filter) }}
+                            {{ itemTextFieldCreator(data.item, filter) }}
                         </template>
                         <template slot="selection" slot-scope="data">
-                            {{ dropDownItemTextCreator(data.item, filter) }}
+                            {{ itemTextFieldCreator(data.item, filter) }}
                         </template>
                     </v-select>
                 </div>
@@ -76,6 +76,19 @@
                         @blur="filterChange"
                         @keyup.enter="onEnterPress('text-field-'+filter.name)"
                     />
+                </div>
+                <div v-if="filter.type === 'radio-button'">
+                    <v-radio-group
+                        v-model="filter.value"
+                        :row="filter.direction"
+                        @change="filterChange"
+                        >
+                        <v-radio
+                            v-for="(item, index) in filter.items" :key="index"
+                            :label="itemTextFieldCreator(item, filter)"
+                            :value="filter.itemValue ? item[filter.itemValue] : item"
+                        />
+                    </v-radio-group>
                 </div>
             </div>
         </div>
@@ -144,17 +157,17 @@
                     delete filter.value
                 }
             },
-            dropDownItemTextCreator(item, filter) {
+            itemTextFieldCreator(item, filter) {
                 if (this.dropDownItemTypes.includes(typeof item)) {
                     return item
                 }
                 const seperator = filter.fieldSeparator || ' '
-                if (Array.isArray(filter.itemKey)) {
-                    let fieldTexts = filter.itemKey.map(itemKey => item[itemKey])
+                if (Array.isArray(filter.itemTextKey)) {
+                    let fieldTexts = filter.itemTextKey.map(itemTextKey => item[itemTextKey])
                     return fieldTexts.join(seperator)
                 }
-                if (typeof filter.itemKey === 'string') {
-                    return item[filter .itemKey]
+                if (typeof filter.itemTextKey === 'string') {
+                    return item[filter.itemTextKey]
                 }
             }
         }

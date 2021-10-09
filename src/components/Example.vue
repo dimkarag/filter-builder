@@ -25,22 +25,35 @@ export default {
       selectedFilters: {},
       filters: [
           {
-              name: 'Active',
-              key: 'active',
-              type: 'boolean'
+				name: 'Active',
+				key: 'active',
+				type: 'boolean'
           },
           {
-              name: 'Partner',
-              key: 'partner',
-              type: 'dropdown',
-              itemKey: ['title', 'name'],
-              fieldSeparator: ',',
-              items: [
-                { id: 1, title: 'Title1', name: 'John '},
-                { id: 2, title: 'Title2', name: 'Anna '}
-              ],
-              itemValue: 'id',
-              prependIcon: 'mdi-domain'
+				name: 'Partner',
+				key: 'partner',
+				type: 'dropdown',
+				itemTextKey: ['title', 'name'],
+				fieldSeparator: ',',
+				items: [
+					{ id: 1, title: 'Mr', name: 'John '},
+					{ id: 2, title: 'Mrs', name: 'Anna '}
+				],
+				itemValue: 'id',
+				prependIcon: 'mdi-domain'
+          },
+          {
+				name: 'Select',
+				key: 'id',
+				type: 'radio-button',
+				items: [
+					{ id: 1, title: 'Mr', name: 'John '},
+					{ id: 2, title: 'Mrs', name: 'Anna '}
+				],
+				itemTextKey: ['title', 'name'],
+				fieldSeparator: ',',
+				direction: 'row',
+				itemValue: 'id'
           }
       ],
     }
