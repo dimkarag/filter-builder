@@ -20,9 +20,9 @@ Filter Builder is a Vue Component for creating dynamic search filters based on u
 > > **-Checkbox Filter**
 > >  ```python
 > >filters: {
-> >			label: 'Active',
->	>		key: 'active',
->	>		type: 'boolean'
+> >		label: 'Active',
+> >		key: 'active',
+> >		type: 'boolean'
 > >}
 > >```
 > > * **label**: The label which is showned and describes the filter
@@ -30,7 +30,7 @@ Filter Builder is a Vue Component for creating dynamic search filters based on u
 > > >  ```python
 > >> Example of Returned Object
 > > >{
->> >			active:  true
+>> >	active:  true
 >> >}
 >> >```
 > > * **type**: The type of filter. This property is needed for all filters in order to define the filter component.
@@ -38,9 +38,9 @@ Filter Builder is a Vue Component for creating dynamic search filters based on u
 > > **-Text Field Filter**
 > >  ```python
 > >filters: {
-> >			label: 'Name',
->	>		key: 'name',
->	>		type: 'text'
+> >		label: 'Name',
+> >		key: 'name',
+> >		type: 'text'
 > >}
 > >```
 > > * **label**: The label which is showned and describes the filter
@@ -48,7 +48,7 @@ Filter Builder is a Vue Component for creating dynamic search filters based on u
 > > >  ```python
 > >>Example of Returned Object
 > > >{
->> >			name:  'John'
+>> >	name:  'John'
 >> >}
 >> >```
 > > * **type**: The type of filter. This property is needed for all filters in order to define the filter component.
@@ -60,8 +60,8 @@ Filter Builder is a Vue Component for creating dynamic search filters based on u
 >>	key:  'person',
 >>	type:  'dropdown',
 >>	items: [
->>		{ id:  1, title:  'Mr', name:  'John' },
->>		{ id:  2, title:  'Mrs', name:  'Anna' }
+>>	{ id:  1, title:  'Mr', name:  'John' },
+>>	{ id:  2, title:  'Mrs', name:  'Anna' }
 >>	],
 >>	itemValue:  'id',
 >>	itemTextKey: ['title', 'name'],
@@ -85,7 +85,7 @@ Filter Builder is a Vue Component for creating dynamic search filters based on u
 > > >  ```python
 > >>Example of Returned Object
 > > >{
->> >			person:  1
+>> >	person:  1
 >> >}
 >> >```
 
@@ -96,8 +96,8 @@ Filter Builder is a Vue Component for creating dynamic search filters based on u
 >>	key:  'id',
 >>	type:  'radio-button',
 >>	items: [
->>		{ id:  1, type:  'Coupe', name:  'Car' },
->>		{ id:  2, type:  'Street', name:  'Motorbike' }
+>>	{ id:  1, type:  'Coupe', name:  'Car' },
+>>	{ id:  2, type:  'Street', name:  'Motorbike' }
 >>	],
 >>	itemValue:  'id',
 >>	itemTextKey: ['type', 'name'],
@@ -123,7 +123,7 @@ Filter Builder is a Vue Component for creating dynamic search filters based on u
 > > >  ```python
 > >>Example of Returned Object
 > > >{
->> >			id:  2
+>> >	id:  2
 >> >}
 >> >```
 ## Events
