@@ -87,6 +87,7 @@
                             v-for="(item, index) in filter.items" :key="index"
                             :label="itemTextFieldCreator(item, filter)"
                             :value="filter.itemValue ? item[filter.itemValue] : item"
+                            :color="filter.color"
                         />
                     </v-radio-group>
                 </div>

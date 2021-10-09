@@ -16,54 +16,66 @@
 </template>
 
 <script>
-import FilterBuilder from './FilterBuilder.vue'
-export default {
-  name: 'Example',
-  components: { FilterBuilder },
-  data() {
-    return {
-      selectedFilters: {},
-      filters: [
-          {
-				name: 'Active',
-				key: 'active',
-				type: 'boolean'
-          },
-          {
-				name: 'Partner',
-				key: 'partner',
-				type: 'dropdown',
-				itemTextKey: ['title', 'name'],
-				fieldSeparator: ',',
-				items: [
-					{ id: 1, title: 'Mr', name: 'John '},
-					{ id: 2, title: 'Mrs', name: 'Anna '}
-				],
-				itemValue: 'id',
-				prependIcon: 'mdi-domain'
-          },
-          {
-				name: 'Select',
-				key: 'id',
-				type: 'radio-button',
-				items: [
-					{ id: 1, title: 'Mr', name: 'John '},
-					{ id: 2, title: 'Mrs', name: 'Anna '}
-				],
-				itemTextKey: ['title', 'name'],
-				fieldSeparator: ',',
-				direction: 'row',
-				itemValue: 'id'
-          }
-      ],
-    }
-  },
-  methods: {
-    filterChanged(filters) {
-      this.selectedFilters = filters
-    }
-  }
-}
+	import FilterBuilder from './FilterBuilder.vue'
+	export default {
+		name: 'Example',
+		components: { FilterBuilder },
+		data() {
+			return {
+				selectedFilters: {},
+				options: {
+					builderIcon: 'mdi-plus',
+					builderIconColor: '#ac282d',
+					removeIcon: 'mdi-close-circle',
+					removeIconColor: '#FF0000'
+				},
+				filters: [
+					{
+						name: 'Active',
+						key: 'active',
+						type: 'boolean'
+					},
+					{
+                        name: 'Name',
+                        key: 'name',
+                        type: 'text'
+                    },
+					{
+						name: 'Choose Person',
+						key: 'person',
+						type: 'dropdown',
+						itemTextKey: ['title', 'name'],
+						fieldSeparator: ',',
+						items: [
+							{ id: 1, title: 'Mr', name: 'John '},
+							{ id: 2, title: 'Mrs', name: 'Anna '}
+						],
+						itemValue: 'id',
+						prependIcon: 'mdi-domain'
+					},
+					{
+						name: 'Select Person',
+						key: 'id',
+						type: 'radio-button',
+						items: [
+							{ id: 1, title: 'Mr', name: 'John '},
+							{ id: 2, title: 'Mrs', name: 'Anna '}
+						],
+						itemTextKey: ['title', 'name'],
+						fieldSeparator: ',',
+						direction: 'row',
+						itemValue: 'id',
+						color: 'red'
+					}
+				]
+			}
+		},
+		methods: {
+			filterChanged(filters) {
+				this.selectedFilters = filters
+			}
+		}
+	}
 </script>
 
 <style scoped>
