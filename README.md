@@ -6,10 +6,10 @@ Filter Builder is a Vue Component for creating dynamic search filters based on u
 >Default options values below:
 > ```python
 > options: {
->	builderIcon:  'mdi-plus',
->	builderIconColor:  '#ac282d',
->	removeIcon:  'mdi-close-circle',
->	removeIconColor:  '#FF0000'
+>	builderIcon: 'mdi-plus',
+>	builderIconColor: '#ac282d',
+>	removeIcon: 'mdi-close-circle',
+>	removeIconColor: '#FF0000'
 > }
 > ```
 > * **builderIcon**: Material Design Icon for the filter builder button which opens the selection of the filters to add.
@@ -30,7 +30,7 @@ Filter Builder is a Vue Component for creating dynamic search filters based on u
 > > >  ```python
 > >> Example of Returned Object
 > > >{
->> >	active:  true
+>> >	active: true
 >> >}
 >> >```
 > > * **type**: The type of filter. This property is needed for all filters in order to define the filter component.
@@ -48,7 +48,7 @@ Filter Builder is a Vue Component for creating dynamic search filters based on u
 > > >  ```python
 > >>Example of Returned Object
 > > >{
->> >	name:  'John'
+>> >	name: 'John'
 >> >}
 >> >```
 > > * **type**: The type of filter. This property is needed for all filters in order to define the filter component.
@@ -56,17 +56,17 @@ Filter Builder is a Vue Component for creating dynamic search filters based on u
 > >**-Dropdown Select Filter**
 >>```python 
 >>{
->>	label:  'Person',
->>	key:  'person',
->>	type:  'dropdown',
+>>	label: 'Person',
+>>	key: 'person',
+>>	type: 'dropdown',
 >>	items: [
->>	{ id:  1, title:  'Mr', name:  'John' },
->>	{ id:  2, title:  'Mrs', name:  'Anna' }
+>>		{ id: 1, title: 'Mr', name: 'John' },
+>>		{ id: 2, title: 'Mrs', name: 'Anna' }
 >>	],
->>	itemValue:  'id',
+>>	itemValue: 'id',
 >>	itemTextKey: ['title', 'name'],
->>	fieldSeparator:  '-',
->>	prependIcon:  'mdi-domain'
+>>	fieldSeparator: '-',
+>>	prependIcon: 'mdi-domain'
 >>}
 
 > > * **label**: The label which is showned and describes the filter.
@@ -85,25 +85,25 @@ Filter Builder is a Vue Component for creating dynamic search filters based on u
 > > >  ```python
 > >>Example of Returned Object
 > > >{
->> >	person:  1
+>> >	person: 1
 >> >}
 >> >```
 
 > >**-Radion Button Filter**
 >>```python 
 >>{
->>	label:  'Auto',
->>	key:  'id',
->>	type:  'radio-button',
+>>	label: 'Auto',
+>>	key: 'id',
+>>	type: 'radio-button',
 >>	items: [
->>	{ id:  1, type:  'Coupe', name:  'Car' },
->>	{ id:  2, type:  'Street', name:  'Motorbike' }
+>>		{ id: 1, type: 'Coupe', name: 'Car' },
+>>		{ id: 2, type: 'Street', name: 'Motorbike' }
 >>	],
->>	itemValue:  'id',
+>>	itemValue: 'id',
 >>	itemTextKey: ['type', 'name'],
->>	fieldSeparator:  '-',
->>	direction:  'row',
->>	color:  'red'
+>>	fieldSeparator: '-',
+>>	direction: 'row',
+>>	color: 'red'
 >>}
 >> ```
 > > * **label**: The label which is showned and describes the filter (As described above).
