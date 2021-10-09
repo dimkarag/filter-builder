@@ -31,37 +31,37 @@
 				},
 				filters: [
 					{
-						name: 'Active',
+						label: 'Active',
 						key: 'active',
 						type: 'boolean'
 					},
 					{
-                        name: 'Name',
+                        label: 'Name',
                         key: 'name',
                         type: 'text'
                     },
 					{
-						name: 'Choose Person',
+						label: 'Person',
 						key: 'person',
 						type: 'dropdown',
 						itemTextKey: ['title', 'name'],
 						fieldSeparator: ',',
 						items: [
-							{ id: 1, title: 'Mr', name: 'John '},
-							{ id: 2, title: 'Mrs', name: 'Anna '}
+							{ id: 1, title: 'Mr', name: 'John' },
+							{ id: 2, title: 'Mrs', name: 'Anna' }
 						],
 						itemValue: 'id',
 						prependIcon: 'mdi-domain'
 					},
 					{
-						name: 'Select Person',
+						label: 'Auto',
 						key: 'id',
 						type: 'radio-button',
 						items: [
-							{ id: 1, title: 'Mr', name: 'John '},
-							{ id: 2, title: 'Mrs', name: 'Anna '}
+							{ id: 1, type: 'Coupe', name: 'Car' },
+							{ id: 2, type: 'Street', name: 'Motorbike' }
 						],
-						itemTextKey: ['title', 'name'],
+						itemTextKey: ['type', 'name'],
 						fieldSeparator: ',',
 						direction: 'row',
 						itemValue: 'id',

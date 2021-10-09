@@ -20,14 +20,14 @@
             </template>
             <v-card>
                 <v-card-actions class="filter-choices-wrapper">
-                    <div v-for="filter in filters" :key="filter.name" class="filter-choices">
-                        <div @click="addFilter(filter)">{{ filter.name }}</div>
+                    <div v-for="filter in filters" :key="filter.label" class="filter-choices">
+                        <div @click="addFilter(filter)">{{ filter.label }}</div>
                     </div>
                 </v-card-actions>
             </v-card>
         </v-menu>
         <div class="fields-wrapper">
-            <div v-for="filter in selectedFilters" :key="filter.name" class="filter-fields">
+            <div v-for="filter in selectedFilters" :key="filter.label" class="filter-fields">
                 <div class="remove-filter">
                     <v-btn
                         class="remove-button"
@@ -41,7 +41,7 @@
                 <div v-if="filter.type === 'boolean'">
                     <v-checkbox
                         v-model="filter.value"
-                        :label="filter.name"
+                        :label="filter.label"
                         @change="filterChange"
                     />
                 </div>
@@ -50,7 +50,7 @@
                         v-model="filter.value"
                         :items="filter.items"
                         menu-props="auto"
-                        :label="filter.name"
+                        :label="filter.label"
                         hide-details
                         :prepend-icon="filter.prependIcon"
                         single-line
@@ -69,12 +69,12 @@
                 </div>
                 <div v-if="filter.type === 'text'">
                     <v-text-field
-                        :id="'text-field-'+filter.name"
+                        :id="'text-field-'+filter.label"
                         v-model="filter.value"
-                        :label="filter.name"
+                        :label="filter.label"
                         clearable
                         @blur="filterChange"
-                        @keyup.enter="onEnterPress('text-field-'+filter.name)"
+                        @keyup.enter="onEnterPress('text-field-'+filter.label)"
                     />
                 </div>
                 <div v-if="filter.type === 'radio-button'">
@@ -196,7 +196,6 @@
     border: #D3D3D3 solid 1px;
     border-radius: 10px;
     padding: 1vw;
-    max-width: 300px;
 }
 .filter-label {
     font-weight: bold;
