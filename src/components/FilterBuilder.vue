@@ -20,60 +20,61 @@
             </template>
             <v-card>
                 <v-card-actions class="filter-choices-wrapper">
-                    <div v-for="field in filterFields" :key="field.name" class="filter-choices">
-                        <div @click="addFilter(field)">{{ field.name }}</div>
+                    <div v-for="filter in filters" :key="filter.name" class="filter-choices">
+                        <div @click="addFilter(filter)">{{ filter.name }}</div>
                     </div>
                 </v-card-actions>
             </v-card>
         </v-menu>
         <div class="fields-wrapper">
-            <div v-for="field in selectedFilters" :key="field.name" class="filter-fields">
+            <div v-for="filter in selectedFilters" :key="filter.name" class="filter-fields">
                 <div class="remove-filter">
                     <v-btn
                         class="remove-button"
                         dark
                         fab
                         :color="options.removeIconColor"
-                        @click="removeFilter(field)"
+                        @click="removeFilter(filter)"
                     >
                         <v-icon dark> {{ options.removeIcon }}</v-icon>
                     </v-btn></div>
-                <div v-if="field.type === 'boolean'">
+                <div v-if="filter.type === 'boolean'">
                     <v-checkbox
-                        v-model="field.value"
-                        :label="field.name"
+                        v-model="filter.value"
+                        :label="filter.name"
                         @change="filterChange"
                     />
                 </div>
-                <div v-if="field.type === 'dropdown'">
+                <div v-if="filter.type === 'dropdown'">
                     <v-select
-                        v-model="field.value"
-                        :items="field.items"
+                        v-model="filter.value"
+                        :items="filter.items"
                         menu-props="auto"
-                        :label="field.name"
+                        :label="filter.name"
                         hide-details
-                        :prepend-icon="field.prependIcon"
+                        :prepend-icon="filter.prependIcon"
                         single-line
                         clearable
-                        :item-value="field.itemValue"
+                        :return-object="!filter.itemValue"
+                        :item-value="filter.itemValue"
                         @change="filterChange"
                     >
                         <template slot="item" slot-scope="data">
-                            {{ dropDownItemTextCreator(data.item, field) }}
+                            {{ dropDownItemTextCreator(data.item, filter) }}
                         </template>
                         <template slot="selection" slot-scope="data">
-                            {{ dropDownItemTextCreator(data.item, field) }}
+                            {{ dropDownItemTextCreator(data.item, filter) }}
                         </template>
                     </v-select>
                 </div>
-                <div v-if="field.type === 'text'">
+                <div v-if="filter.type === 'text'">
                     <v-text-field
-                        :id="'text-field-'+field.name"
-                        v-model="field.value"
-                        :label="field.name"
+                        :id="'text-field-'+filter.name"
+                        v-model="filter.value"
+                        :label="filter.name"
                         clearable
                         @blur="filterChange"
-                        @keyup.enter="onEnterPress('text-field-'+field.name)"
+                        @keyup.enter="onEnterPress('text-field-'+filter.name)"
                     />
                 </div>
             </div>
@@ -86,7 +87,7 @@
     export default {
         name: 'FilterBuilder',
         props: {
-            filterFields: {
+            filters: {
                 type: Array,
                 required: true
             },
@@ -111,10 +112,10 @@
             }
         },
         methods: {
-            addFilter(field) {
-                const sameFilter = this.selectedFilters.find(filter => { return filter.key === field.key })
+            addFilter(newFilter) {
+                const sameFilter = this.selectedFilters.find(filter => { return filter.key === newFilter.key })
                 if (!sameFilter) {
-                    this.selectedFilters.push(field)
+                    this.selectedFilters.push(newFilter)
                 }
             },
             filterChange() {
@@ -134,26 +135,26 @@
             onEnterPress(id) {
                 document.getElementById(id).blur()
             },
-            removeFilter(field) {
-                const filterIndex = this.selectedFilters.indexOf(field)
+            removeFilter(filter) {
+                const filterIndex = this.selectedFilters.indexOf(filter)
                 this.selectedFilters.splice(filterIndex, 1)
                 this.selectedFilters = [...this.selectedFilters]
-                if (field.value || field.value === false) {
+                if (filter.value || filter.value === false) {
                     this.filterChange()
-                    delete field.value
+                    delete filter.value
                 }
             },
-            dropDownItemTextCreator(item, field) {
-                const seperator = field.fieldSeparator || ' '
+            dropDownItemTextCreator(item, filter) {
                 if (this.dropDownItemTypes.includes(typeof item)) {
                     return item
                 }
-                if (Array.isArray(field.itemKey)) {
-                    let fieldTexts = field.itemKey.map(itemKey => item[itemKey])
+                const seperator = filter.fieldSeparator || ' '
+                if (Array.isArray(filter.itemKey)) {
+                    let fieldTexts = filter.itemKey.map(itemKey => item[itemKey])
                     return fieldTexts.join(seperator)
                 }
-                if (typeof field.itemKey === 'string') {
-                    return item[field.itemKey]
+                if (typeof filter.itemKey === 'string') {
+                    return item[filter .itemKey]
                 }
             }
         }

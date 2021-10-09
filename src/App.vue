@@ -1,16 +1,16 @@
 <template>
   <v-app id="app">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <example />
   </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import example from './components/Example.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    example
   }
 }
 </script>
@@ -22,6 +22,8 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+}
+.v-application--wrap {
+  flex-direction: row!important;
 }
 </style>
