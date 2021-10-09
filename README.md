@@ -6,11 +6,11 @@ Filter Builder is a Vue Component for creating dynamic search filters based on u
 >Default options values below:
 > ```python
 > options: {
-	>	builderIcon:  'mdi-plus',
-	>	builderIconColor:  '#ac282d',
-	>	removeIcon:  'mdi-close-circle',
-	>	removeIconColor:  '#FF0000'
-	>}
+>	builderIcon:  'mdi-plus',
+>	builderIconColor:  '#ac282d',
+>	removeIcon:  'mdi-close-circle',
+>	removeIconColor:  '#FF0000'
+> }
 > ```
 > * **builderIcon**: Material Design Icon for the filter builder button which opens the selection of the filters to add.
 > * **builderIconColor**: Color of the filter builder add filter button.
