@@ -1,9 +1,12 @@
 import Vue from 'vue'
 import App from './App.vue'
+import Vuetify from 'vuetify/lib/framework'
+import '@mdi/font/css/materialdesignicons.css'
 Vue.config.productionTip = false
+Vue.use(Vuetify)
 
-import vuetify from './plugins/vuetify'
-
+const vuetify = new Vuetify({
+})
 
 new Vue({
     vuetify,
