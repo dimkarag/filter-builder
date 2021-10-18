@@ -82,12 +82,12 @@ Filter Builder is a Vue Component for creating dynamic search filters based on u
 >> * Mr-John
 >> * Mrs-Anna
 >Lets say that we choose the first selection 'Mr-John', the return object from the filter builder will be:
-> > >  ```python
-> >>Example of Returned Object
-> > >{
->> >	person:  1
->> >}
->> >```
+> > ```python
+> >Example of Returned Object
+> > {
+>>  person: 1
+>> }
+>>```
 
 > >**-Radion Button Filter**
 >>```python 
@@ -120,12 +120,12 @@ Filter Builder is a Vue Component for creating dynamic search filters based on u
 >> * Coupe-Car
 >> * Street-Motorbike
 >Lets say that we choose the second selection 'Street-Motorbike', the return object from the filter builder will be:
-> > >  ```python
-> >>Example of Returned Object
-> > >{
->> >	id:  2
->> >}
->> >```
+> > ```python
+> >Example of Returned Object
+> > {
+>>  id: 2
+>> }
+>>```
 ## Events
 * **@filter-change**: This event fires every time a selected filter's value is setted or is changed. The method's argument that listens to this event, is an array of objects.
 The object format is defined on property 'filters' .
