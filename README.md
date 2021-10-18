@@ -27,12 +27,12 @@ Filter Builder is a Vue Component for creating dynamic search filters based on u
 > >```
 > > * **label**: The label which is showned and describes the filter
 > > * **key**: The field key of the returned object on filter value selection. This property is needed for all the variety of filters. For example, if the checkbox is checked the returned object it would be:
-> > >  ```python
-> >> Example of Returned Object
-> > >{
->> >	active: true
->> >}
->> >```
+> >```python
+> >Example of Returned Object
+> > {
+>> 	active: true
+>> }
+>>```
 > > * **type**: The type of filter. This property is needed for all filters in order to define the filter component.
 
 > > **-Text Field Filter**
@@ -45,12 +45,12 @@ Filter Builder is a Vue Component for creating dynamic search filters based on u
 > >```
 > > * **label**: The label which is showned and describes the filter
 > > * **key**: The field key of the returned object on filter value selection. This property is needed for all the variety of filters. For example, if we write on the text field the value 'John' the returned object it would be:
-> > >  ```python
-> >>Example of Returned Object
-> > >{
->> >	name: 'John'
->> >}
->> >```
+> > ```python
+> >Example of Returned Object
+> > {
+>> 	name: 'John'
+>> }
+>>```
 > > * **type**: The type of filter. This property is needed for all filters in order to define the filter component.
 > 
 > >**-Dropdown Select Filter**
@@ -82,12 +82,12 @@ Filter Builder is a Vue Component for creating dynamic search filters based on u
 >> * Mr-John
 >> * Mrs-Anna
 >Lets say that we choose the first selection 'Mr-John', the return object from the filter builder will be:
-> > >  ```python
-> >>Example of Returned Object
-> > >{
->> >	person: 1
->> >}
->> >```
+> >   ```python
+> >Example of Returned Object
+> > {
+>> 	person: 1
+>> }
+>> ```
 
 > >**-Radion Button Filter**
 >>```python 
