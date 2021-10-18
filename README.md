@@ -52,9 +52,9 @@ Filter Builder is a Vue Component for creating dynamic search filters based on u
 >> }
 >>```
 > > * **type**: The type of filter. This property is needed for all filters in order to define the filter component.
-> 
+>
 > >**-Dropdown Select Filter**
->>```python 
+>>```python
 >>{
 >>	label: 'Person',
 >>	key: 'person',
