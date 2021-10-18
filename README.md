@@ -48,7 +48,7 @@ Filter Builder is a Vue Component for creating dynamic search filters based on u
 > > ```python
 > >Example of Returned Object
 > > {
->> 	name: 'John'
+>> name: 'John'
 >> }
 >>```
 > > * **type**: The type of filter. This property is needed for all filters in order to define the filter component.
