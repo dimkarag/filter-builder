@@ -87,7 +87,7 @@ Filter Builder is a Vue Component for creating dynamic search filters based on u
 > > >{
 >> >	person:  1
 >> >}
->> >``
+>> >```
 
 > >**-Radion Button Filter**
 >>```python 
