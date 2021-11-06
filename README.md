@@ -1,6 +1,19 @@
 # Filter Builder
 Filter Builder is a Vue Component for creating dynamic search filters based on user configuration. Filter Builder uses Vuetify and Material Design Icons.
 
+## Table of Contents
+- [Install](#install)
+- [Properties](#properties)
+- [Events](#events)
+- [License](#license)
+## Install
+- Node.js 12+ required.
+To install locally (for development):
+```
+git clone https://github.com/dimkarag/filter-builder.git
+cd filter-builder
+yarn install
+```
 ## Properties
  * **options**: Non required prop
 >Default options values below:
